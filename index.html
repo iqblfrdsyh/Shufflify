@@ -4,42 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Group Shuffler</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1>Group Shuffler</h1>
-    <div class="container">
+
+  <body
+    class="font-sans bg-gray-50 text-gray-900 flex flex-col items-center p-8"
+  >
+    <h1 class="text-2xl mb-4">Group Shuffler</h1>
+
+    <div
+      class="container bg-white p-8 rounded-lg shadow-xl max-w-lg w-full transition-all duration-300"
+    >
       <textarea
         id="nameInput"
         placeholder="Masukkan nama anggota. Bisa dipisah dengan enter atau satu per satu..."
+        class="w-full p-3 mb-4 placeholder:text-[14px] sm:placeholder:text-[17px] border border-gray-300 rounded-md resize-y focus:ring-2 focus:ring-blue-300 focus:outline-none min-h-[90px]"
       ></textarea>
-      <button onclick="addName()">Tambah</button>
-      <div class="list" id="nameList"></div>
+
+      <button
+        onclick="addName()"
+        class="bg-blue-500 text-white py-2 px-4 rounded-md font-semibold mr-2 hover:bg-blue-600 transform hover:scale-105 transition duration-200"
+      >
+        Tambah
+      </button>
+
+      <div
+        class="list mt-4 mb-4 max-h-[120px] overflow-y-auto bg-gray-100 p-4 rounded-md"
+        id="nameList"
+      ></div>
 
       <input
         type="number"
         id="groupCount"
         placeholder="Jumlah kelompok"
         min="1"
+        class="w-full py-2 px-4 mb-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none min-h-[40px]"
       />
 
-      <div style="margin: 0.5rem 0">
-        <label
-          ><input type="checkbox" id="includeLeader" /> Tentukan ketua
-          kelompok</label
-        >
+      <div class="my-2">
+        <label class="inline-flex items-center">
+          <input type="checkbox" id="includeLeader" class="mr-2" />
+          Tentukan ketua kelompok
+        </label>
       </div>
 
-      <button onclick="shuffleGroups()">Shuffle Kelompok</button>
+      <button
+        onclick="shuffleGroups()"
+        class="bg-blue-500 text-white py-2 px-4 rounded-md font-semibold hover:bg-blue-600 transform hover:scale-105 transition duration-200"
+      >
+        Shuffle Kelompok
+      </button>
 
-      <div id="groups"></div>
+      <div
+        id="groups"
+        class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 transition-all duration-300"
+      ></div>
     </div>
 
-    <footer>
+    <footer class="mt-32 bottom-0 p-4 w-full text-center bg-white">
       <p>
         &copy; 2025
         <span
@@ -48,10 +70,10 @@
             href="https://instagram.com/i.frdsyh"
             target="_blank"
             rel="noopener noreferrer"
-            style="color: inherit;"
+            class="text-gray-900 underline"
             >M Iqbal Ferdiansyah S</a
-          ></span
-        >
+          >
+        </span>
         | All Rights Reserved.
       </p>
     </footer>
