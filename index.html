@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Shuffler</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Group Shuffler</h1>
+    <div class="container">
+      <textarea
+        id="nameInput"
+        placeholder="Masukkan nama anggota. Bisa dipisah dengan enter atau satu per satu..."
+      ></textarea>
+      <button onclick="addName()">Tambah</button>
+      <div class="list" id="nameList"></div>
+
+      <input
+        type="number"
+        id="groupCount"
+        placeholder="Jumlah kelompok"
+        min="1"
+      />
+
+      <div style="margin: 0.5rem 0">
+        <label
+          ><input type="checkbox" id="includeLeader" /> Tentukan ketua
+          kelompok</label
+        >
+      </div>
+
+      <button onclick="shuffleGroups()">Shuffle Kelompok</button>
+
+      <div id="groups"></div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2025
+        <span
+          >Created by
+          <a
+            href="https://instagram.com/i.frdsyh"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: inherit;"
+            >M Iqbal Ferdiansyah S</a
+          ></span
+        >
+        | All Rights Reserved.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
